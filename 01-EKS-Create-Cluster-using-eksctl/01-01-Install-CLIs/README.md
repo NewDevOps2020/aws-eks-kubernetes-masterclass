@@ -37,7 +37,15 @@ aws-cli/2.0.8 Python/3.7.5 Windows/10 botocore/2.0.0dev12
 ```
 - Reference: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html
 
-### Step-01-03: Configure AWS Command Line using Security Credentials
+### Step-01-03: Linux - Install and configure AWS CLI 
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+- unzip awscliv2.zip
+- sudo ./aws/install
+- aws --version
+
+
+
+### Step-01-04: Configure AWS Command Line using Security Credentials
 - Go to AWS Management Console --> Services --> IAM
 - Select the IAM User: kalyan 
 - **Important Note:** Use only IAM user to generate **Security Credentials**. Never ever use Root User. (Highly not recommended)
@@ -100,6 +108,11 @@ C:\Users\KALYAN\Documents\kubectlbinary
 kubectl version --short --client
 kubectl version --client
 ```
+### Step-02-03: Linux - Install and configure kubectl
+- Install Kubectl on Linux
+- curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+- chmod +x ./kubectl
+- sudo mv ../bin/kubectl /usr/local/bin
 
 ## Step-03: Install eksctl CLI
 ### Step-03-01: eksctl on Mac
@@ -120,6 +133,9 @@ eksctl version
 ### Step-03-02: eksctl on windows or linux
 - For windows and linux OS, you can refer below documentation link. 
 - **Reference:** https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html#installing-eksctl
+- curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+- sudo mv /tmp/eksctl /usr/local/bin
+- eksctl version
 
 
 ## References:
